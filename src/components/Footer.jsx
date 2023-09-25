@@ -8,7 +8,7 @@ const Footer = () => {
                     <h3 className="text-[#70757a] text-[15px]">Georgia</h3>
                 </div>
                 <hr />
-                <div className="flex justify-between text-[14px] text-[#70757a] mt-3 mx-1">
+                <div className="flex justify-between text-[14px] text-[#70757a] mt-3 mx-1 text-['arial']">
                     <div>
                         <ul className="flex gap-7">
                             <li className="hover:underline">

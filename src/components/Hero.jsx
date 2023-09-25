@@ -40,7 +40,13 @@ const Hero = () => {
                         I'm Feeling Lucky
                     </button>
                 </div>
-                <p className="text-[13px]">Google offered in: <span className="text-[#1a0dab] hover:cursor-pointer hover:underline">ქართული</span></p>
+                <p className="text-[13px] leading-[28px]">
+                    Google offered in:
+                    <span className="text-[#1a0dab] hover:cursor-pointer hover:underline">
+                        {" "}
+                        ქართული
+                    </span>
+                </p>
             </div>
         </div>
     );
