@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Google from "../assets/google.png";
 import Mglass from "../assets/lupa.svg";
 import Mic from "../assets/microphone.svg";
 import Camera from "../assets/camera.svg";
 
 const Hero = () => {
+    const [isHovering, setIsHovering] = useState(false);
+    const [isHovering1, setIsHovering1] = useState(false);
+
     return (
-        <div className="flex flex-col align-middle mx-auto mt-[206px]">
+        <div className="flex flex-col align-middle mx-auto mt-[40px]">
             <img src={Google} alt="google-logo" className="w-[272px] mx-auto" />
             <div className="pt-[26px] mx-auto">
                 <div className="inline-flex mx-[40px] md:w-[584px] w-[400px]">
@@ -22,12 +25,36 @@ const Hero = () => {
                         />
                     </div>
                     <div className="relative flex align-middle gap-4 mr-3 mt-[11px]">
-                        <button className="absolute w-[24px] right-[55px]">
+                        <button
+                            className="absolute w-[24px] right-[55px]"
+                            onMouseOver={() => setIsHovering(true)}
+                            onMouseLeave={() => setIsHovering(false)}
+                        >
                             <img src={Mic} alt="voice-search" />
                         </button>
-                        <button className="absolute w-[24px] right-[15px]">
+                        <div
+                            className={`absolute text-['arial'] font-bold border-[1px] border-solid border-[rgb(255,255,255)] text-[11px] w-[100px] pt-[5px] mt-[40px] h-[29px] right-[16px] text-center bg-[rgb(45,45,45)] text-white rounded-sm ${
+                                isHovering ? "block" : "hidden"
+                            }`}
+                        >
+                            <div className="absolute bg-[rgb(45,45,45)] mt-[-9px] ml-[45px] w-[7px] h-[7px] rotate-45"></div>
+                            <div>Search by voice</div>
+                        </div>
+                        <button
+                            className="absolute w-[24px] right-[15px]"
+                            onMouseOver={() => setIsHovering1(true)}
+                            onMouseLeave={() => setIsHovering1(false)}
+                        >
                             <img src={Camera} alt="voice-search" />
                         </button>
+                        <div
+                            className={`absolute text-['arial'] font-bold border-[1px] border-solid border-[rgb(255,255,255)] text-[11px] w-[100px] pt-[5px] mt-[40px] h-[29px] right-[-20px] text-center bg-[rgb(45,45,45)] text-white rounded-sm ${
+                                isHovering1 ? "block" : "hidden"
+                            }`}
+                        >
+                            <div className="absolute bg-[rgb(45,45,45)] mt-[-9px] ml-[45px] w-[7px] h-[7px] rotate-45"></div>
+                            <div className="px-[2px]">Search by image</div>
+                        </div>
                     </div>
                 </div>
             </div>
